@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://g25w06h33yni"]
+
+[ext_resource type="Script" uid="uid://cq42nc0vpgbe8" path="res://monster.gd" id="1_1cbnp"]
+[ext_resource type="Texture2D" uid="uid://720jhxdjd18h" path="res://assets/N3XUS-Starter-FREE-v1.1/N3XUS-Starter-FREE-v1.1/monsters/ghost/ghost-sheet.png" id="2_c47ug"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vr0w3"]
+atlas = ExtResource("2_c47ug")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tndq"]
+atlas = ExtResource("2_c47ug")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ngjm"]
+atlas = ExtResource("2_c47ug")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhkt7"]
+atlas = ExtResource("2_c47ug")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3r7jw"]
+atlas = ExtResource("2_c47ug")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rux75"]
+atlas = ExtResource("2_c47ug")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0yuh3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vr0w3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tndq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ngjm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhkt7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3r7jw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rux75")
+}],
+"loop": 1,
+"name": &"momster",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0yuh3"]
+
+[node name="monster" type="CharacterBody2D" unique_id=826315630]
+script = ExtResource("1_1cbnp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=855433954]
+position = Vector2(27.5, -27)
+scale = Vector2(2.59375, 2.5625)
+sprite_frames = SubResource("SpriteFrames_0yuh3")
+animation = &"momster"
+autoplay = "momster"
+frame_progress = 0.18316786
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D" unique_id=1223893763]
+shape = SubResource("CircleShape2D_0yuh3")
